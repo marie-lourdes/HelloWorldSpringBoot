@@ -4,12 +4,19 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.example.helloworld.model.HelloWorld;
+import com.example.helloworld.service.BusinessService;
+
 @SpringBootApplication
 public class HelloworldApplication implements CommandLineRunner{
+	
+@Autowired
+ private BusinessService bs;
 
 	public static void main(String[] args) throws IOException {
 		Properties vProp = new Properties();
@@ -36,6 +43,7 @@ public class HelloworldApplication implements CommandLineRunner{
 
 	}
 
+	
 // la methode run de l interface CommandLineRunner est appelé en meme temps que l execution du programme 'main',
 	// sans l appeler par nous meme
 	// si cette methode etatit dans une autre class, au chargment de la class lors
@@ -47,11 +55,14 @@ public class HelloworldApplication implements CommandLineRunner{
 	//solution 3: on implemnte directement l interface dans le main class et sa methode run
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("Hello World!");
+	
+		System.out.println(bs.getHelloWorld());
 	}
 	//solution2:
 	/*@Bean
 	 public ApplicationRunner runApplication() {
 		return new  ApplicationRunner();
 	}*/
+	
+
 }
