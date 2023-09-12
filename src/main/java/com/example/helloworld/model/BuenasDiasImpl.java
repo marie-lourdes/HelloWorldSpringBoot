@@ -3,7 +3,7 @@ package com.example.helloworld.model;
 import org.springframework.stereotype.Component;
 
 import com.example.helloworld.service.SayingHelloWorld;
-@Component
+
 public class BuenasDiasImpl  implements SayingHelloWorld{
 	
 	public HelloWorld helloWorld = new HelloWorld() ;

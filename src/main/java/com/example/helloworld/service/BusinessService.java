@@ -8,9 +8,9 @@ import com.example.helloworld.model.HelloWorld;
 @Component
 public class BusinessService  implements  SayingHelloWorld {
 	
-	// l annotation autowire injecte et intancie le bean HelloWorld,
+	// l annotation autowired injecte et intanciera une class de type intrface SayingHelloWorld
 	//evitez d utiliser les new et valeur arg constructor,pour plus de modularité
-	@Autowired
+	
 	private SayingHelloWorld  sayingHelloWorld;
 	
 	//pattern strategy pourimplementer differnt helloworld en plusieur langues
