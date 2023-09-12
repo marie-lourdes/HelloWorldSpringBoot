@@ -18,7 +18,7 @@ public class HelloWorld {
 	// la methode de class toString est surchargée et appelé directement au chargement de la classe
 	@Override 
 	public String toString(){
-		return " to string class with class and attribut value  "+this.getValue();
+		return " to string class with class and attribut value  "+ value;
 	}
 }
 

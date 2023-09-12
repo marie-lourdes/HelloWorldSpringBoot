@@ -11,12 +11,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.example.helloworld.model.HelloWorld;
 import com.example.helloworld.service.BusinessService;
+import com.example.helloworld.service.SayingHelloWorld;
 
 @SpringBootApplication
 public class HelloworldApplication implements CommandLineRunner{
 	
 @Autowired
- private BusinessService bs;
+ private  SayingHelloWorld businessService ;
 
 	public static void main(String[] args) throws IOException {
 		Properties vProp = new Properties();
@@ -56,7 +57,7 @@ public class HelloworldApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 	
-		System.out.println(bs.getHelloWorld());
+		System.out.println(businessService.getHelloWorld());
 	}
 	//solution2:
 	/*@Bean
