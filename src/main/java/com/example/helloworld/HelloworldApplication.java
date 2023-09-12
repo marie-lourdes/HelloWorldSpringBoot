@@ -9,6 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.example.helloworld.model.BuenasDiasImpl;
 import com.example.helloworld.model.HelloWorld;
 import com.example.helloworld.service.BusinessService;
 import com.example.helloworld.service.SayingHelloWorld;
@@ -17,10 +18,11 @@ import com.example.helloworld.service.SayingHelloWorld;
 public class HelloworldApplication implements CommandLineRunner{
 
 	//injection de l interface avec l instance businessService
+	// private   SayingHelloWorld businessService ;
 	//si il y a plusieur iplementation de l interface SayingHelloworld, meiux vaut injecter le type classe d impl BusinessService
 	//private  BusinessService businessService ;
 	@Autowired
- private  SayingHelloWorld businessService ;
+private BusinessService businessService ;
 
 	public static void main(String[] args) throws IOException {
 		Properties vProp = new Properties();
@@ -59,8 +61,8 @@ public class HelloworldApplication implements CommandLineRunner{
 	//solution 3: on implemnte directement l interface dans le main class et sa methode run
 	@Override
 	public void run(String... args) throws Exception {
-	
-		System.out.println(businessService.getHelloWorld());
+		SayingHelloWorld sayHello =   businessService.setHelloWorldTraduced(new BuenasDiasImpl());
+		System.out.println( sayHello.getHelloWorld().getValue());
 	}
 	//solution2:
 	/*@Bean

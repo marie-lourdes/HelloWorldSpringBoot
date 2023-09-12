@@ -6,13 +6,13 @@ import org.springframework.stereotype.Component;
 public class HelloWorld {
 	private String value;
 	
-	public HelloWorld() {
-		this.value= "Hello world class";
-	}
-
- 
+	
 	public String  getValue() {
 		return value;
+	}
+ 
+	public String  setValue(String value) {
+		return this.value=value ;
 	}
 	
 	// la methode de class toString est surchargée et appelé directement au chargement de la classe
