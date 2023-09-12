@@ -15,8 +15,11 @@ import com.example.helloworld.service.SayingHelloWorld;
 
 @SpringBootApplication
 public class HelloworldApplication implements CommandLineRunner{
-	
-@Autowired
+
+	//injection de l interface avec l instance businessService
+	//si il y a plusieur iplementation de l interface SayingHelloworld, meiux vaut injecter le type classe d impl BusinessService
+	//private  BusinessService businessService ;
+	@Autowired
  private  SayingHelloWorld businessService ;
 
 	public static void main(String[] args) throws IOException {
