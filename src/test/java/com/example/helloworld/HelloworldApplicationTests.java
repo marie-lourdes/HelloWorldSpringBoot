@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.example.helloworld.service.BuenasDiasImpl;
+import com.example.helloworld.service.BuenosDiasImpl;
 import com.example.helloworld.service.BusinessService;
 import com.example.helloworld.service.HelloWorldImpl;
 import com.example.helloworld.service.ISayingHelloWorld;
@@ -26,9 +26,9 @@ class HelloworldApplicationTests {
 	
 	@Test
 	void testHelloWorldTraducedInSpanishFromBusinessService() {
-		ISayingHelloWorld helloWorldTraducedBybuenasDias= businessService.setHelloWorldTraduced(new BuenasDiasImpl());
-		String expected = "buenas dias";
-		String result =  helloWorldTraducedBybuenasDias.getHelloWorld().getValue();
+		ISayingHelloWorld helloWorldTraducedByBuenosDias= businessService.setHelloWorldTraduced(new BuenosDiasImpl());
+		String expected = "buenos dias";
+		String result =  helloWorldTraducedByBuenosDias.getHelloWorld().getValue();
 		
 		assertEquals( expected , result);
 		

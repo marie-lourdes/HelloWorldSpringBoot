@@ -8,7 +8,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.example.helloworld.service.BuenasDiasImpl;
+import com.example.helloworld.service.BuenosDiasImpl;
 import com.example.helloworld.service.BusinessService;
 import com.example.helloworld.service.ISayingHelloWorld;
 
@@ -60,8 +60,8 @@ private BusinessService businessService ;
 	@Override
 	public void run(String... args) throws Exception {
 
-		ISayingHelloWorld sayHello =   businessService.setHelloWorldTraduced(new BuenasDiasImpl());
-		System.out.println( sayHello.getHelloWorld().getValue());
+		ISayingHelloWorld sayBuenosDias =   businessService.setHelloWorldTraduced(new BuenosDiasImpl());
+		System.out.println( sayBuenosDias.getHelloWorld().getValue());
 	}
 	
 	//par defaut le nom du bean sera celui du nom de la methode qui cree le bean
