@@ -3,13 +3,23 @@ package com.example.helloworld;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.example.helloworld.model.BuenasDiasImpl;
+import com.example.helloworld.service.BusinessService;
+import com.example.helloworld.service.SayingHelloWorld;
 
 @SpringBootApplication
 public class HelloworldApplication implements CommandLineRunner{
+
+	//injection de l interface avec l instance businessService
+	// private   SayingHelloWorld businessService ;
+	//si il y a plusieur iplementation de l interface SayingHelloworld, meiux vaut injecter le type classe d impl BusinessService
+	//private  BusinessService businessService ;
+	@Autowired
+private BusinessService businessService ;
 
 	public static void main(String[] args) throws IOException {
 		Properties vProp = new Properties();
@@ -36,6 +46,7 @@ public class HelloworldApplication implements CommandLineRunner{
 
 	}
 
+
 // la methode run de l interface CommandLineRunner est appelé en meme temps que l execution du programme 'main',
 	// sans l appeler par nous meme
 	// si cette methode etatit dans une autre class, au chargment de la class lors
@@ -47,11 +58,17 @@ public class HelloworldApplication implements CommandLineRunner{
 	//solution 3: on implemnte directement l interface dans le main class et sa methode run
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("Hello World!");
+
+		SayingHelloWorld sayHello =   businessService.setHelloWorldTraduced(new BuenasDiasImpl());
+		System.out.println( sayHello.getHelloWorld().getValue());
 	}
+	
+	//par defaut le nom du bean sera celui du nom de la methode qui cree le bean
+	//sinon ajoutez l annotation @Qualifier pour ajouter un nom au bean
 	//solution2:
 	/*@Bean
-	 public ApplicationRunner runApplication() {
+	 public ApplicationRunner applicationRunner() {
 		return new  ApplicationRunner();
 	}*/
+
 }
