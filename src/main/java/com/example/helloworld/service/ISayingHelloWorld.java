@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import com.example.helloworld.model.HelloWorld;
 
 
-public interface SayingHelloWorld {
+public interface ISayingHelloWorld {
 
  HelloWorld getHelloWorld();
 

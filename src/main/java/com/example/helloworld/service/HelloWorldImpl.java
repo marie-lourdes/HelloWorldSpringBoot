@@ -1,11 +1,11 @@
-package com.example.helloworld.model;
+package com.example.helloworld.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.example.helloworld.service.SayingHelloWorld;
+import com.example.helloworld.model.HelloWorld;
 
-public class HelloWorldImpl implements SayingHelloWorld {
+public class HelloWorldImpl implements ISayingHelloWorld {
 	
 	HelloWorld helloWorld = new HelloWorld() ;
 	@Override

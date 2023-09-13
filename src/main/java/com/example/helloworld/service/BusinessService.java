@@ -6,12 +6,12 @@ import org.springframework.stereotype.Component;
 import com.example.helloworld.model.HelloWorld;
 
 @Component
-public class BusinessService  implements  SayingHelloWorld {
+public class BusinessService  implements  ISayingHelloWorld {
 	
 	// l annotation autowired injecte et intanciera une class de type intrface SayingHelloWorld
 	//evitez d utiliser les new et valeur arg constructor,pour plus de modularité
 	
-	private SayingHelloWorld  sayingHelloWorld;
+	private ISayingHelloWorld  sayingHelloWorld;
 	
 	//pattern strategy pourimplementer differnt helloworld en plusieur langues
 	/*public SayingHelloWorld getHello (SayingHelloWorld sayingHelloworld) {
@@ -19,7 +19,7 @@ public class BusinessService  implements  SayingHelloWorld {
 		
 	}*/
 // injection de dependance avec un setter et pour les classe Service un bonne pratique est passer une abstraction une Interface 
-	public SayingHelloWorld  setHelloWorldTraduced (SayingHelloWorld  sayingHelloWorld) {
+	public ISayingHelloWorld  setHelloWorldTraduced (ISayingHelloWorld  sayingHelloWorld) {
 		
 		return this.sayingHelloWorld = sayingHelloWorld;
 	}

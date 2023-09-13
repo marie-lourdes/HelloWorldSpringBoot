@@ -7,9 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import com.example.helloworld.model.BuenasDiasImpl;
+
+import com.example.helloworld.service.BuenasDiasImpl;
 import com.example.helloworld.service.BusinessService;
-import com.example.helloworld.service.SayingHelloWorld;
+import com.example.helloworld.service.ISayingHelloWorld;
 
 @SpringBootApplication
 public class HelloworldApplication implements CommandLineRunner{
@@ -59,7 +60,7 @@ private BusinessService businessService ;
 	@Override
 	public void run(String... args) throws Exception {
 
-		SayingHelloWorld sayHello =   businessService.setHelloWorldTraduced(new BuenasDiasImpl());
+		ISayingHelloWorld sayHello =   businessService.setHelloWorldTraduced(new BuenasDiasImpl());
 		System.out.println( sayHello.getHelloWorld().getValue());
 	}
 	
