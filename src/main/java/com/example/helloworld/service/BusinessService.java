@@ -13,7 +13,7 @@ public class BusinessService  implements  ISayingHelloWorld {
 	
 	private ISayingHelloWorld  sayingHelloWorld;
 	
-	//pattern strategy pourimplementer differnt helloworld en plusieur langues
+	
 	/*public SayingHelloWorld getHello (SayingHelloWorld sayingHelloworld) {
 		return this.sayingHelloWorld = sayingHelloworld;
 		
@@ -23,7 +23,7 @@ public class BusinessService  implements  ISayingHelloWorld {
 		
 		return this.sayingHelloWorld = sayingHelloWorld;
 	}
-	
+	//pattern strategy pour implementer differnt helloworld en plusieur langues
 	@Override
 	public HelloWorld getHelloWorld () {
 		
