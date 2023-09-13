@@ -9,8 +9,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
 import com.example.helloworld.model.BuenasDiasImpl;
-import com.example.helloworld.model.HelloWorld;
 import com.example.helloworld.service.BusinessService;
 import com.example.helloworld.service.SayingHelloWorld;
 
@@ -64,9 +64,12 @@ private BusinessService businessService ;
 		SayingHelloWorld sayHello =   businessService.setHelloWorldTraduced(new BuenasDiasImpl());
 		System.out.println( sayHello.getHelloWorld().getValue());
 	}
+	
+	//par defaut le nom du bean sera celui du nom de la methode qui cree le bean
+	//sinon ajoutez l annotation @Qualifier pour ajouter un nom au bean
 	//solution2:
 	/*@Bean
-	 public ApplicationRunner runApplication() {
+	 public ApplicationRunner applicationRunner() {
 		return new  ApplicationRunner();
 	}*/
 	

@@ -18,7 +18,7 @@ public class BusinessService  implements  SayingHelloWorld {
 		return this.sayingHelloWorld = sayingHelloworld;
 		
 	}*/
-// injection de dependance avec un setter et pour les classe Service un bonne pratique est passer une abstration une Interface 
+// injection de dependance avec un setter et pour les classe Service un bonne pratique est passer une abstraction une Interface 
 	public SayingHelloWorld  setHelloWorldTraduced (SayingHelloWorld  sayingHelloWorld) {
 		
 		return this.sayingHelloWorld = sayingHelloWorld;
